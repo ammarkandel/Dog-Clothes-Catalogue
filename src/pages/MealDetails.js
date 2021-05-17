@@ -1,9 +1,7 @@
-import { useParams } from 'react-router-dom';
-
+/* eslint-disable */
 const MealDetails = () => {
-  const { id } = useParams();
   return (
-    <div>list details of meal with id :: { id }</div>
+    <h1>MealDetails</h1>
   )
 }
 

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import MainNav from './MainNav';
 import classes from './Layout.module.css';
 

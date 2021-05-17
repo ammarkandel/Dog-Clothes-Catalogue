@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { configureStore } from '@reduxjs/toolkit';
 import mealSlice from './slices/meal-slice';
 

@@ -4,11 +4,15 @@ import { createSlice } from '@reduxjs/toolkit';
 const mealSlice = createSlice({
   name: 'mealSlice',
   initialState: {
+    filter: 'Beef',
     meals: [],
   },
   reducers: {
-    fetchMealsData(state, action) {
-      state.meals = action.payload.meals
+    filter(state, action) {
+      state.filter = action.payload
+    },
+    fetchMeals(state, action) {
+      state.meals = action.payload
     }
   }
 });

@@ -1,9 +1,9 @@
 /* eslint-disable */
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { mealSliceActions } from '../store/slices/meal-slice';
 
 export const categoreis = [
-  'Breakfast', 'Dessert',
+  'Beef', 'Breakfast', 'Dessert',
   'Seafood', 'Side',
   'Starter', 'Vegan',
   'Vegetarian','Chicken',
@@ -11,13 +11,14 @@ export const categoreis = [
 
 const CategoryFilter = () => {
   const dispatch = useDispatch();
+  const filterVal = useSelector((state) => state.meals.filter);
   const filterValHandler = (event) => {
     dispatch(mealSliceActions.filter(event.target.value))
   }
   return (
     <select onChange={filterValHandler}>
-      <option value='Beef'>Beef</option>
-      {categoreis.map((item) => (
+      <option value={filterVal}>{filterVal}</option>
+      {categoreis.filter((item) => item !== filterVal).map((item) => (
         <option key={Math.random()} value={item}>{item}</option>
       ))}
     </select>

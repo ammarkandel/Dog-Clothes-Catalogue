@@ -5,15 +5,11 @@ const mealSlice = createSlice({
   name: 'mealSlice',
   initialState: {
     filter: 'Beef',
-    meals: [],
   },
   reducers: {
     filter(state, action) {
       state.filter = action.payload
     },
-    fetchMeals(state, action) {
-      state.meals = action.payload
-    }
   }
 });
 

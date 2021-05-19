@@ -3,7 +3,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import Meals from './containers/Meals';
 import MealDetails from './components/MealDetails';
-import CategoryFilter from './components/CategoryFilter';
+import CategoryFilter from './containers/CategoryFilter';
 
 function App() {
 

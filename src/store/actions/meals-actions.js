@@ -10,7 +10,7 @@ export const requestMealsData = (category) => {
     }
     try {
       const data = await fetchData();
-      dispatch(mealSliceActions.fetchMeals(data.meals))
+      localStorage.setItem(category, JSON.stringify(data))
     } catch (error) {
       console.log(error);
     }

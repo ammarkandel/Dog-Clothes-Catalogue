@@ -3,15 +3,24 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { requestMealsData, fetchMealDetail } from '../store/actions/meals-actions';
+import { categoreis } from '../components/CategoryFilter';
 
 const Meals = () => {
   const dispatch = useDispatch();
   let filterVal = useSelector((state) => state.meals.filter);
-  const mealsList = useSelector((state) => state.meals.meals);
+  let mealsList = JSON.parse(localStorage.getItem(filterVal)).meals;
   const ids = [];
-  
+
   useEffect(() => {
-    dispatch(requestMealsData(filterVal));
+    categoreis.map((item) => {
+      dispatch(requestMealsData(item));
+    })
+    ids.map((id) => {
+      dispatch(fetchMealDetail(id))
+    })
+  }, [])
+
+  useEffect(() => {
     ids.map((id) => {
       dispatch(fetchMealDetail(id))
     })

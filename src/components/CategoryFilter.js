@@ -2,7 +2,7 @@
 import { useDispatch } from "react-redux";
 import { mealSliceActions } from '../store/slices/meal-slice';
 
-const categoreis = [
+export const categoreis = [
   'Breakfast', 'Dessert',
   'Seafood', 'Side',
   'Starter', 'Vegan',

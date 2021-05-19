@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { createSlice } from '@reduxjs/toolkit';
 
 const mealSlice = createSlice({
@@ -8,9 +7,9 @@ const mealSlice = createSlice({
   },
   reducers: {
     filter(state, action) {
-      state.filter = action.payload
+      state.filter = action.payload;
     },
-  }
+  },
 });
 
 export const mealSliceActions = mealSlice.actions;

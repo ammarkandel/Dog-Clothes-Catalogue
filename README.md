@@ -8,6 +8,9 @@
 - @reduxjs-toolkit
 - react-router-dom
 
+## Live Version
+  [Live Version](https://restaurant-menu-ten.vercel.app/)
+
 ### How to run this project
 
 - First: clone the repo `git clone git@github.com:ammarkandel/Restaurant-Menu.git` and open the folder `cd Restaurant-Menu`.

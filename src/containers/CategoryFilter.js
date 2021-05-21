@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useDispatch, useSelector } from 'react-redux';
 import { mealSliceActions } from '../store/slices/meal-slice';
 

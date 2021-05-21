@@ -1,35 +1,31 @@
+/* eslint-disable */
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { requestMealsData, fetchMealDetail } from '../store/actions/meals-actions';
 import { categoreis } from './CategoryFilter';
+import { getMeals } from '../store/actions/fetchMeals';
 
 const Meals = () => {
   const dispatch = useDispatch();
+  const mealsList = useSelector((state) => state.meals.meals.meals);
+  const status = useSelector((state) => state.meals.status);
   const filterVal = useSelector((state) => state.meals.filter);
-  const mealsList = JSON.parse(localStorage.getItem(filterVal)).meals;
-  const ids = [];
-  const fetchDetails = () => ids.map((id) => dispatch(fetchMealDetail(id)));
 
   useEffect(() => {
-    categoreis.map((item) => dispatch(requestMealsData(item)));
-    fetchDetails();
-  }, []);
-
-  useEffect(() => {
-    fetchDetails();
-  }, [filterVal]);
+    dispatch(getMeals(filterVal));
+  }, [dispatch, filterVal])
 
   return (
     <>
       <ul>
-        {mealsList.map((meal) => {
-          ids.push(meal.idMeal);
+        {status === 'failed' && <h1>Failed........</h1>}
+        {status === 'loading' && <h1>Loading.......</h1>}
+        {status === 'success' && mealsList.map((meal) => {
           return (
             <li key={meal.idMeal}>
               <img src={meal.strMealThumb} height="150" width="150" alt={meal.strMeal} />
               <h4>{meal.strMeal}</h4>
-              <Link to={`/meals/:${meal.idMeal}`}>Details</Link>
+              <Link to={`meals/:${meal.idMeal}`}>Details</Link>
             </li>
           );
         })}

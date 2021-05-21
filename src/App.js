@@ -1,14 +1,11 @@
-/* eslint-disable */
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import Meals from './containers/Meals';
-import MealDetails from './components/MealDetails';
+import MealDetails from './containers/MealDetails';
 import NotFound from './components/NotFound';
 import CategoryFilter from './containers/CategoryFilter';
 
-
 function App() {
-
   return (
     <>
       <Layout>

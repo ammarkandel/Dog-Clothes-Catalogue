@@ -3,7 +3,7 @@ import classes from './MainNav.module.css';
 const MainNav = () => (
   <nav className={classes.navbar}>
     <div className={classes.logo}>
-      LOGO
+      HappyMeal
     </div>
   </nav>
 );

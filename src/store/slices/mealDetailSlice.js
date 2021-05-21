@@ -1,6 +1,5 @@
-/* eslint-disable */
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { getDetails } from '../actions/fetchDetails';
+import { createSlice } from '@reduxjs/toolkit';
+import getDetails from '../actions/fetchDetails';
 import { handleMealDetail } from '../actions/handlingData';
 
 const mealDetailSlice = createSlice({

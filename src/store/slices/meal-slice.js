@@ -1,6 +1,5 @@
-/* eslint-disable */
 import { createSlice } from '@reduxjs/toolkit';
-import { getMeals } from '../actions/fetchMeals';
+import getMeals from '../actions/fetchMeals';
 import { handleMeals } from '../actions/handlingData';
 
 const mealSlice = createSlice({

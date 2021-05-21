@@ -1,0 +1,29 @@
+.meal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
+  margin: 0.5rem;
+  background-color: gray;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.detail_btn {
+  text-decoration: none;
+  background-color: tomato;
+  padding: 0.6rem;
+  border-radius: 4px;
+  color: white;
+  transition: 0.2s;
+  font-weight: 600;
+}
+
+.detail_btn:hover {
+  background-color: white;
+  color: tomato;
+}
+
+.meal h4 {
+  margin: 20px 20px;
+}

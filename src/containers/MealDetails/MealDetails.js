@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import getDetails from '../store/actions/fetchDetails';
+import getDetails from '../../store/actions/fetchDetails';
 
 const MealDetails = () => {
   const dispatch = useDispatch();
@@ -41,17 +41,6 @@ const MealDetails = () => {
         fetchDetailStatus === 'success'
         && (
           <div>
-            <h4>
-              Title:
-              {all.name}
-            </h4>
-            <h4>
-              Country:
-              {all.area}
-            </h4>
-            <ul>
-              {ingredient.map((i) => <li key={Math.random()}>{i}</li>)}
-            </ul>
             <iframe
               width="420"
               height="480"
@@ -60,6 +49,17 @@ const MealDetails = () => {
               allowFullScreen
               title={all.name}
             />
+            <h1>
+              Title:
+              {all.name}
+            </h1>
+            <h2>
+              Country:
+              {all.area}
+            </h2>
+            <ul>
+              {ingredient.map((i) => <li key={Math.random()}>{i}</li>)}
+            </ul>
           </div>
         )
       }

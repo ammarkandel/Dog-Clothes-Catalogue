@@ -1,9 +1,9 @@
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Layout from './components/layout/Layout';
-import Meals from './containers/Meals';
-import MealDetails from './containers/MealDetails';
-import NotFound from './components/NotFound';
-import CategoryFilter from './containers/CategoryFilter';
+import Meals from './containers/Meals/Meals';
+import MealDetails from './containers/MealDetails/MealDetails';
+import NotFound from './components/NotFound/NotFound';
+import CategoryFilter from './containers/CategoryFilter/CategoryFilter';
 
 function App() {
   return (

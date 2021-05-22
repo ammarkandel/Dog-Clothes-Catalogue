@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import getMeals from '../../store/actions/fetchMeals';
 import classes from './Meals.module.css';
+import CategoryFilter from '../CategoryFilter/CategoryFilter';
 
 const Meals = () => {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ const Meals = () => {
 
   return (
     <>
+      <CategoryFilter />
       <ul>
         {status === 'failed' && <h1>Failed........</h1>}
         {status === 'loading' && <h1>Loading.......</h1>}

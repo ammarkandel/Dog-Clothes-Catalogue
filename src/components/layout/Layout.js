@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import MainNav from './MainNav';
+import MainNav from './MainNav/MainNav';
 import classes from './Layout.module.css';
 
 const Layout = (props) => {

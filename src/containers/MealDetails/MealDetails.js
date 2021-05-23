@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import getDetails from '../../store/actions/fetchDetails';
+import classes from './MealDetails.module.css';
 
 const MealDetails = () => {
   const dispatch = useDispatch();
@@ -40,19 +41,21 @@ const MealDetails = () => {
       {
         fetchDetailStatus === 'success'
         && (
-          <div>
-            <iframe
-              width="420"
-              height="480"
-              src={all.src}
-              frameBorder="0"
-              allowFullScreen
-              title={all.name}
-            />
-            <h1 data-test="title">
-              Title:
-              {all.name}
-            </h1>
+          <div className={classes.details}>
+            <div>
+              <h1 data-test="title">
+                Title:
+                {all.name}
+              </h1>
+              <iframe
+                width="420"
+                height="480"
+                src={all.src}
+                frameBorder="0"
+                allowFullScreen
+                title={all.name}
+              />
+            </div>
             <h2>
               Country:
               {all.area}

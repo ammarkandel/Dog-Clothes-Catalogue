@@ -1,1 +1,3 @@
-export const findElement = (wrapper, val) => wrapper.find(`[data-test="${val}"]`);
+const findElement = (wrapper, val) => wrapper.find(`[data-test="${val}"]`);
+
+export default findElement;

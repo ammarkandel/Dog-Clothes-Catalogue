@@ -49,7 +49,7 @@ const MealDetails = () => {
               allowFullScreen
               title={all.name}
             />
-            <h1>
+            <h1 data-test="title">
               Title:
               {all.name}
             </h1>

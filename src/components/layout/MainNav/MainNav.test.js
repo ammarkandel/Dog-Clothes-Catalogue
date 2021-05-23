@@ -1,6 +1,6 @@
 import Enzyme, { shallow } from 'enzyme';
 import EnzymeAdapter from '@wojtekmaj/enzyme-adapter-react-17';
-import MainNav from "./MainNav";
+import MainNav from './MainNav';
 import findElement from '../../../test';
 
 Enzyme.configure({ adapter: new EnzymeAdapter() });

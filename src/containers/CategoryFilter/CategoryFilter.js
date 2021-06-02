@@ -16,10 +16,10 @@ const CategoryFilter = () => {
     dispatch(mealSliceActions.filter(event.target.value));
   };
   return (
-    <select className={classes.select_category} onChange={filterValHandler} data-test="select-category">
-      <option value={filterVal}>{filterVal}</option>
+    <select className={classes.select_category} onChange={filterValHandler}>
+      <option data-testid="select-option" value={filterVal}>{filterVal}</option>
       {categoreis.filter((item) => item !== filterVal).map((item) => (
-        <option key={Math.random()} value={item}>{item}</option>
+        <option key={item} data-testid="select-option" value={item}>{item}</option>
       ))}
     </select>
   );

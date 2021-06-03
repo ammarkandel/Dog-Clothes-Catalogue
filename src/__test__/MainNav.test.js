@@ -7,7 +7,7 @@ test('Render MainNav component without problems', async () => {
 });
 
 test('Check that logo image is render', async () => {
-  const mainNav = render(<MainNav />);
-  const logo = await mainNav.findByTestId("logo");
+  const { findByTestId } = render(<MainNav />);
+  const logo = await findByTestId("logo");
   expect(logo.src).toContain('http://localhost/logo.png');
 });

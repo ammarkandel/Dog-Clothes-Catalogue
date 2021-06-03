@@ -4,6 +4,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import getDetails from '../../store/actions/fetchDetails';
 import classes from './MealDetails.module.css';
 
+const all = {
+  name: '',
+  area: '',
+  src: '',
+  ingredient: [],
+};
+
 const MealDetails = () => {
   const dispatch = useDispatch();
   const id = useParams().id.slice(1);
@@ -14,12 +21,6 @@ const MealDetails = () => {
   let detail;
   const selectDetails = useSelector((state) => state.mealDetail).mealDetail.meals;
   const fetchDetailStatus = useSelector((state) => state.mealDetail).status;
-  const all = {
-    name: '',
-    area: '',
-    src: '',
-    ingredient: [],
-  };
   if (selectDetails) {
     detail = selectDetails;
     all.name = `${detail[0].strMeal}`;
@@ -43,7 +44,7 @@ const MealDetails = () => {
         && (
           <div className={classes.details}>
             <div>
-              <h1 data-test="title">
+              <h1>
                 Title:
                 {all.name}
               </h1>

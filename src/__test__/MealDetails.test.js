@@ -1,4 +1,4 @@
-import { expect, test } from '@jest/globals';
+import { test } from '@jest/globals';
 import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { MemoryRouter, Route } from 'react-router-dom';
@@ -9,8 +9,10 @@ test('Render MealDetails component without problems', async () => {
   render(
     <Provider store={store}>
       <MemoryRouter initialEntries={['/meals/:52772']}>
-        <Route path='meals/:id'> <MealDetails /> </Route>
+        <Route path="meals/:id">
+          <MealDetails />
+        </Route>
       </MemoryRouter>
-    </Provider>
+    </Provider>,
   );
 });

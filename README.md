@@ -5,8 +5,14 @@
 ## Build with:
 
 - react.js
+- css
 - @reduxjs-toolkit
 - react-router-dom
+
+## Run tests:
+
+- Open terminal in the dir of the project
+- Run `npm test`
 
 ## Live Version
   [Live Version](https://restaurant-menu-ten.vercel.app/)

@@ -11,7 +11,7 @@
 
 ## Run tests:
 
-- Open terminal in the dir of the project
+- Open terminal in the directory of the project
 - Run `npm test`
 
 ## Live Version

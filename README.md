@@ -21,7 +21,7 @@
 
 - First: clone the repo `git clone git@github.com:ammarkandel/Restaurant-Menu.git` and open the folder `cd Restaurant-Menu`.
 - Second: Make sure you have yarn globally in your machine `yarn --version` if not run `npm install --global yarn`.
-- Third: Make sure you in the project path in the terminal then run `yarn install` or `npm install` and `npm start`.
+- Third: Make sure you in the project path in the terminal then run `yarn install` and `npm start` to start the localhost.
 
 ### Author
 

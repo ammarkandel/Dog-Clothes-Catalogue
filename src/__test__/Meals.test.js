@@ -1,4 +1,4 @@
-import { test } from '@jest/globals';
+import { test, expect } from '@jest/globals';
 import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { StaticRouter } from 'react-router-dom';
@@ -39,7 +39,6 @@ test('Check the first meal from list to match category search', async () => {
       </StaticRouter>
     </Provider>,
   );
-  
   expect(state.meals.status).toBe('success');
   const allCategoryMeals = await findAllByTestId('meals_list');
   expect(allCategoryMeals[0].textContent).toContain(state.meals.meals.meals[0].strMeal);

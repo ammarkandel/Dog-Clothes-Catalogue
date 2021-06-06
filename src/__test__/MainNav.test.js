@@ -11,3 +11,9 @@ test('Check that logo image is render', async () => {
   const logo = await findByTestId('logo');
   expect(logo.src).toContain('http://localhost/logo.png');
 });
+
+test('Check logo text', async () => {
+  const { findByTestId } = render(<MainNav />);
+  const logo = await findByTestId('logo_text');
+  expect(logo.textContent).toContain('HappyMeal');
+});

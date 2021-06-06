@@ -25,12 +25,12 @@ test('Test the default value of filter value', async () => {
       </StaticRouter>
     </Provider>,
   );
-  const mealsCategory = await findByTestId("meals_title");
+  const mealsCategory = await findByTestId('meals_title');
   expect(mealsCategory.textContent).toBe(state.meals.filter);
-})
+});
 
 test('Check the first meal from list to match category search', async () => {
-  await store.dispatch(getMeals('Beef'))
+  await store.dispatch(getMeals('Beef'));
   const state = store.getState();
   const { findAllByTestId } = render(
     <Provider store={store}>
@@ -41,12 +41,12 @@ test('Check the first meal from list to match category search', async () => {
   );
   
   expect(state.meals.status).toBe('success');
-  const allCategoryMeals = await findAllByTestId("meals_list");
+  const allCategoryMeals = await findAllByTestId('meals_list');
   expect(allCategoryMeals[0].textContent).toContain(state.meals.meals.meals[0].strMeal);
-}, 15000)
+}, 15000);
 
 test('If dispatch with wrong category', async () => {
-  await store.dispatch(getMeals('wrong category'))
+  await store.dispatch(getMeals('wrong category'));
   const state = store.getState();
   const { findByTestId } = render(
     <Provider store={store}>
@@ -55,7 +55,7 @@ test('If dispatch with wrong category', async () => {
       </StaticRouter>
     </Provider>,
   );
-  const fetchMeals = await findByTestId("fetch_meals");
+  const fetchMeals = await findByTestId('fetch_meals');
   expect(fetchMeals.textContent).toContain('wrong');
   expect(state.meals.meals.meals).toBe(null);
-}, 15000)
+}, 15000);

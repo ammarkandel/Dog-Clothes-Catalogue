@@ -38,4 +38,4 @@ test('Check meal detail page title', async () => {
 
   const pageTitle = await findByTestId('details_title');
   expect(pageTitle.textContent).toContain('Meal');
-})
+});

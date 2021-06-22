@@ -37,7 +37,7 @@ const MealDetails = () => {
 
   return (
     <>
-      <h1 data-testid="details_title">Meal Detail</h1>
+      <h1 data-testid="details_title">Meal Details</h1>
       {fetchDetailStatus === 'loading' && <h1>Loading......</h1>}
 
       {

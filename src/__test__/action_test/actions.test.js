@@ -3,7 +3,7 @@ import getDetails from '../../store/actions/fetchDetails';
 import getMeals from '../../store/actions/fetchMeals';
 import store from '../../store/index';
 
-test('Check the data of meal details', async () => {
+test('Check the data of meal detailss', async () => {
   const id = '52772';
   await store.dispatch(getDetails(id));
   const state = store.getState();
@@ -13,7 +13,7 @@ test('Check the data of meal details', async () => {
   expect(detailData.meals[0].idMeal).toBe(id);
 }, 15000);
 
-test('Check the data of meals list if it is related to the category', async () => {
+test('Check the data of meals list if it is related to the categorys', async () => {
   await store.dispatch(getMeals('Seafood'));
   const state = store.getState();
 

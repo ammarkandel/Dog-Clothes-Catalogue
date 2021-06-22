@@ -3,3 +3,33 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+.detail_title {
+  text-align: center;
+  font-size: 2rem;
+  color: tomato;
+}
+
+.description {
+  padding: 1rem;
+  background-color: rgba(150, 148, 148, 0.8);
+  color: white;
+}
+
+.description span {
+  color: tomato;
+  font-size: 2rem;
+}
+
+.ingredient li:first-child {
+  list-style-type: none;
+  font-size: 1.5rem;
+  color: tomato;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.ingredient li:not(:first-child) {
+  list-style-type: circle;
+  padding: 1rem;
+}

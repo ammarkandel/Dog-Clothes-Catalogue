@@ -42,7 +42,11 @@ const Meals = () => {
   return (
     <>
       <CategoryFilter />
-      <h1 className={classes.list_title} data-testid="meals_title">{filterVal}</h1>
+      <h1 className={classes.list_title} data-testid="meals_title">
+        -
+        {filterVal}
+        -
+      </h1>
       <div data-testid="fetch_meals">
         {mealsStatus()}
       </div>

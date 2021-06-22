@@ -37,34 +37,40 @@ const MealDetails = () => {
 
   return (
     <>
-      <h1 data-testid="details_title">Meal Details</h1>
+      <h1 className={classes.detail_title}>- Meal Details -</h1>
+      {fetchDetailStatus === 'failed' && <h1>Failed to get meal details</h1>}
       {fetchDetailStatus === 'loading' && <h1>Loading......</h1>}
 
       {
         fetchDetailStatus === 'success'
         && (
           <div className={classes.details}>
-            <div>
+              {all.src && (
+                <div>
+                  <iframe
+                    width="320"
+                    height="480"
+                    src={all.src}
+                    frameBorder="0"
+                    allowFullScreen
+                    title={all.name}
+                  />
+                </div>
+              )}
+            <div className={classes.description}>
               <h1>
-                Title:
+                <span>Name :: </span>
                 {all.name}
               </h1>
-              <iframe
-                width="420"
-                height="480"
-                src={all.src}
-                frameBorder="0"
-                allowFullScreen
-                title={all.name}
-              />
+              <h1>
+                <span>Country :: </span>
+                {all.area}
+              </h1>
+              <ul className={classes.ingredient}>
+                <li>- Ingredient -</li>
+                {ingredient.map((item) => <li key={Math.random()}>{item}</li>)}
+              </ul>
             </div>
-            <h2>
-              Country:
-              {all.area}
-            </h2>
-            <ul>
-              {ingredient.map((i) => <li key={Math.random()}>{i}</li>)}
-            </ul>
           </div>
         )
       }

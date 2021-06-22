@@ -1,14 +1,13 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
-import store from '../store/index';
 import { Provider } from 'react-redux';
 import { createMemoryHistory } from 'history';
-import getMeals from '../store/actions/fetchMeals';
-import getDetails from '../store/actions/fetchDetails';
-import React from 'react';
 import { Router } from 'react-router-dom';
 import '@testing-library/jest-dom/extend-expect';
+import store from '../store/index';
+import getMeals from '../store/actions/fetchMeals';
+import getDetails from '../store/actions/fetchDetails';
 import App from '../App';
-
 
 test('App render meals with no errors', async () => {
   await store.dispatch(getMeals('Beef'));
@@ -18,8 +17,8 @@ test('App render meals with no errors', async () => {
       <Provider store={store}>
         <App />
       </Provider>
-    </Router>
-  )
+    </Router>,
+  );
 
   expect(screen.getByText(/Loading/i)).toBeInTheDocument();
 }, 15000);
@@ -32,8 +31,8 @@ test('Not found component render when wrong route', () => {
       <Provider store={store}>
         <App />
       </Provider>
-    </Router>
-  )
+    </Router>,
+  );
   expect(screen.getByText(/404 Not Found/i)).toBeInTheDocument();
 });
 
@@ -47,8 +46,8 @@ test('Render meal details and sure that data loading', async () => {
       <Provider store={store}>
         <App />
       </Provider>
-    </Router>
-  )
+    </Router>,
+  );
   expect(status).toBe('success');
   expect(screen.getByText(/Meal Details/i)).toBeInTheDocument();
   expect(screen.getByText(/Loading/i)).toBeInTheDocument();

@@ -25,7 +25,7 @@ test('App render meals with no errors', async () => {
 
 test('Not found component render when wrong route', () => {
   const history = createMemoryHistory();
-  history.push('/some/bad/route')
+  history.push('/some/bad/route');
   render(
     <Router history={history}>
       <Provider store={store}>
@@ -40,7 +40,7 @@ test('Render meal details and sure that data loading', async () => {
   await store.dispatch(getDetails('52874'));
   const { status } = store.getState().mealDetail;
   const history = createMemoryHistory();
-  history.push('/meals/:52874')
+  history.push('/meals/:52874');
   render(
     <Router history={history}>
       <Provider store={store}>

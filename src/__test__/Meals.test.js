@@ -26,7 +26,7 @@ test('Test the default value of filter value', async () => {
     </Provider>,
   );
   const mealsCategory = await findByTestId('meals_title');
-  expect(mealsCategory.textContent).toBe(state.meals.filter);
+  expect(mealsCategory.textContent).toContain(state.meals.filter);
 });
 
 test('Check the first meal from list to match category search', async () => {
